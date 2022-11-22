@@ -60,7 +60,7 @@ spec:
       description: The docker command(s) to run.
       default: |
         # Default docker build / inspect / push command
-        docker build --tag "$IMAGE_URL:$IMAGE_TAG" --file $PATH_TO_DOCKERFILE/$DOCKERFILE $PATH_TO_CONTEXT
+        docker build --build-arg APP_TYPE=emma-script.sh --tag "$IMAGE_URL:$IMAGE_TAG" --file $PATH_TO_DOCKERFILE/$DOCKERFILE $PATH_TO_CONTEXT
         docker inspect ${IMAGE_URL}:${IMAGE_TAG}
         docker push ${IMAGE_URL}:${IMAGE_TAG}
     #
